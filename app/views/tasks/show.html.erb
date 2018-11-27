@@ -1,0 +1,12 @@
+<!-- show.html.erb -->
+<!-- first it creates the path based on the object it gets -->
+
+<h2><%= @task.completed ? "✅" : "❌" %> <%= @task.title %></h2>
+
+<p><%= @task.details %></p>
+
+<hr>
+
+<%= link_to "Edit task", edit_task_path(@task) %>
+
+<%= link_to "Delete task", task_path(@task), method: :delete, data: { confirm: "Are you sure you want to delete #{@task.title}" } %>
